@@ -1,5 +1,8 @@
 module.exports = {
-  content: ['App.js'],
+  content: ['App.js',
+    './signup//*.{html,js}',
+    './screens//*.{html,js}',
+    './components//*.{html,js}'],
 
   theme: {
     extend: {

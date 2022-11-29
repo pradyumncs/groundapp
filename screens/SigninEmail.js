@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import React, { useLayoutEffect, useState, useEffect } from 'react'
 import useAuth from '../hooks/useAuth'
-import { GoogleSignin, GoogleSigninButton } from '@react-native-google-signin/google-signin';
+
 import auth from '@react-native-firebase/auth';
 import { useNavigation } from "@react-navigation/core";
 import { useTailwind } from "tailwind-rn";

@@ -1,13 +1,31 @@
 {
   "expo": {
-    "name": "groundapp",
+    "name": "France Connect",
     "slug": "franceconnect",
+    "owner": "tutorprojects",
     "version": "1.0.0",
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ],
+      "@react-native-firebase/app"
+    ],
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./appassets/logoo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/appbacc.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -18,17 +36,30 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tutorprojects.franceconnect",
+      "buildNumber": "1",
+      "infoPlist": {
+        "ACCESS_FINE_LOCATION": "Turning on location service allows us access to show when friends are nearby ",
+        "ACCESS_BACKGROUND_LOCATION": "Turning on location service allows us access to show when friends are nearby ",
+        "ACCESS_COARSE_LOCATION": "Turning on location service allows us access to show when friends are nearby ",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Turning on location service allows us access to show when friends are nearby ",
+        "NSLocationAlwaysUsageDescription": "Turning on location service allows us access to show when friends are nearby ",
+        "NSLocationWhenInUseUsageDescription": "Turning on location service allows us access to show when friends are nearby "
+      }
     },
     "android": {
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./appassets/logoo.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.pradyumncs.franceconnect"
+      "package": "com.tutorprojects.franceconnect",
+      "versionCode": 1
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./appassets/logo.png"
     },
     "extra": {
       "eas": {

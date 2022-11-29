@@ -10,14 +10,14 @@ import {
 } from "react-native";
 import React, { useLayoutEffect } from 'react'
 import useAuth from '../hooks/useAuth'
-import { GoogleSignin, GoogleSigninButton } from '@react-native-google-signin/google-signin';
+
 import auth from '@react-native-firebase/auth';
 import { useNavigation } from "@react-navigation/core";
 import { useTailwind } from "tailwind-rn";
 import logo from '../appassets/logo.png';
 import title from '../appassets/title.png';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-
+import { GoogleSignin, GoogleSigninButton } from '@react-native-google-signin/google-signin';
 
 const LoginScreen = () => {
     const { onGoogleButtonPress, loading } = useAuth()
