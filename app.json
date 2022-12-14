@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "France Connect",
-    "slug": "franceconnect",
-    "owner": "tutorprojects",
+    "name": "Switzerland Social",
+    "slug": "switzerlandsocial",
     "version": "1.0.0",
+    "owner": "tutorprojects",
     "plugins": [
       [
         "expo-build-properties",
@@ -38,7 +38,7 @@
     "ios": {
       "googleServicesFile": "./GoogleService-Info.plist",
       "supportsTablet": true,
-      "bundleIdentifier": "com.tutorprojects.franceconnect",
+      "bundleIdentifier": "com.tutorprojects.switzerlandsocial",
       "buildNumber": "1",
       "infoPlist": {
         "ACCESS_FINE_LOCATION": "Turning on location service allows us access to show when friends are nearby ",
@@ -55,7 +55,7 @@
         "foregroundImage": "./appassets/logoo.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.tutorprojects.franceconnect",
+      "package": "com.tutorprojects.switzerlandsocial",
       "versionCode": 1
     },
     "web": {
@@ -63,7 +63,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "b29e031e-da45-46b1-81b6-ff2af1fb8a7d"
+        "projectId": "042ac549-9024-4d47-916f-ac8119797423"
       }
     }
   }

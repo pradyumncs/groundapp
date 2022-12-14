@@ -1,72 +1,72 @@
 {
   "project_info": {
-    "project_number": "511816435178",
-    "project_id": "franceconnect-754fe",
-    "storage_bucket": "franceconnect-754fe.appspot.com"
+    "project_number": "195210156102",
+    "project_id": "switzerlandsocial-65d1a",
+    "storage_bucket": "switzerlandsocial-65d1a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:511816435178:android:03756422d2790154489e93",
+        "mobilesdk_app_id": "1:195210156102:android:8f950b5d7f0d3ae1cb1247",
         "android_client_info": {
-          "package_name": "com.tutorprojects.franceconnect"
+          "package_name": "com.tutorprojects.switzerlandsocial"
         }
       },
       "oauth_client": [
         {
-          "client_id": "511816435178-g85iub281uc7rqjsb9942eui18a4hk18.apps.googleusercontent.com",
+          "client_id": "195210156102-6akk9uq2q910n7vhn8pgqn7qfqj8mnmu.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.tutorprojects.franceconnect",
-            "certificate_hash": "8e1d43f0248dfa46c20861fd9f3a550624eb43fd"
+            "package_name": "com.tutorprojects.switzerlandsocial",
+            "certificate_hash": "542ca0b398e9914d23f9dd32bbe64a274443452b"
           }
         },
         {
-          "client_id": "511816435178-h410ue7nu35a13433i2klp5tm69b2koc.apps.googleusercontent.com",
+          "client_id": "195210156102-dmjpnmmb68nqi3grf41t592qn04c3443.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.tutorprojects.franceconnect",
-            "certificate_hash": "33c89c8f363939d86b6673c5738e7d3feba86a26"
+            "package_name": "com.tutorprojects.switzerlandsocial",
+            "certificate_hash": "f1ec8c4e75f802897212804675c00f313f250be1"
           }
         },
         {
-          "client_id": "511816435178-lpqlfotbtp59ob0cnvbpaeqfk27cqc2m.apps.googleusercontent.com",
+          "client_id": "195210156102-dvtl7pnm2u7jsag07k03o7v06j8o0vm6.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.tutorprojects.franceconnect",
-            "certificate_hash": "4f693c5b84abdda75b6af0aa751d87536e4faf9f"
+            "package_name": "com.tutorprojects.switzerlandsocial",
+            "certificate_hash": "be5e7533fea64ac3d5add1cc74a0632be4d62944"
           }
         },
         {
-          "client_id": "511816435178-sbj5ipdg49as5pmio1m8oo5o9vc9etij.apps.googleusercontent.com",
+          "client_id": "195210156102-nd871nvepifqcj9jpp95d843s7siq3k0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.tutorprojects.franceconnect",
-            "certificate_hash": "35c167a088307965771f840d4ee784e7f7efd4dc"
+            "package_name": "com.tutorprojects.switzerlandsocial",
+            "certificate_hash": "db317f456dde6a60f84d6243e2a439eb4bbba009"
           }
         },
         {
-          "client_id": "511816435178-jo7s1cvm33hi1h6m9iuha90buc3kqth1.apps.googleusercontent.com",
+          "client_id": "195210156102-e6esekokkv2nefhb5jun3ett6g9eik7j.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAgM2bukMSADvBp3skeGlcb8rR3gFf3yx4"
+          "current_key": "AIzaSyDMNQ208hfRy0one2SmbPtubeMGcqHoKAc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "511816435178-jo7s1cvm33hi1h6m9iuha90buc3kqth1.apps.googleusercontent.com",
+              "client_id": "195210156102-e6esekokkv2nefhb5jun3ett6g9eik7j.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "511816435178-ktciriego6urpukg21oapnj43omm9rd1.apps.googleusercontent.com",
+              "client_id": "195210156102-n1bs2nuihhvcbn2vccltvhbcm89bg5of.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.tutorprojects.franceconnect"
+                "bundle_id": "com.tutorprojects.switzerlandsocial"
               }
             }
           ]

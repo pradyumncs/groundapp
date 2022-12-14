@@ -551,6 +551,11 @@
 			"paddingLeft": 8
 		}
 	},
+	"pt-4": {
+		"style": {
+			"paddingTop": 16
+		}
+	},
 	"text-center": {
 		"style": {
 			"textAlign": "center"

@@ -52,7 +52,7 @@ const LoginScreen = () => {
                     <Image style={styles.titleimage} source={title} />
                 </View>
                 <View style={tw("divBox flex items-center justify-center")}>
-                    <Image style={tw("divBox flex items-center justify-center h-32 w-32")} source={logo} />
+
                 </View>
                 <View style={tw("p-4")} />
                 <View style={tw("p-4")} />
@@ -110,13 +110,13 @@ const LoginScreen = () => {
                         Learn how we process your data in our {' '}
                         <Text
                             style={styles.hyperli}
-                            onPress={() => { Linking.openURL('https://pages.flycricket.io/french-connect/privacy') }}>
+                            onPress={() => { Linking.openURL('https://pages.flycricket.io/switzerland-social/privacy') }}>
                             Privacy policy
                         </Text>
                         {"\n"} and {' '}
                         <Text
                             style={styles.hyperli}
-                            onPress={() => { Linking.openURL('https://pages.flycricket.io/avalu-kannada-dati/terms') }}>
+                            onPress={() => { Linking.openURL('https://pages.flycricket.io/switzerland-social/terms') }}>
                             Terms of Service.
                         </Text>
 

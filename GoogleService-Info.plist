@@ -3,23 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>511816435178-ktciriego6urpukg21oapnj43omm9rd1.apps.googleusercontent.com</string>
+	<string>195210156102-n1bs2nuihhvcbn2vccltvhbcm89bg5of.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.511816435178-ktciriego6urpukg21oapnj43omm9rd1</string>
+	<string>com.googleusercontent.apps.195210156102-n1bs2nuihhvcbn2vccltvhbcm89bg5of</string>
 	<key>ANDROID_CLIENT_ID</key>
-	<string>511816435178-g85iub281uc7rqjsb9942eui18a4hk18.apps.googleusercontent.com</string>
+	<string>195210156102-6akk9uq2q910n7vhn8pgqn7qfqj8mnmu.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAAmyoBo-5nNKSk7h-laBNQqdIiskGEuA4</string>
+	<string>AIzaSyCGtVMGiVaOOgr2SGeuL5jglds7ieEA3ao</string>
 	<key>GCM_SENDER_ID</key>
-	<string>511816435178</string>
+	<string>195210156102</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.tutorprojects.franceconnect</string>
+	<string>com.tutorprojects.switzerlandsocial</string>
 	<key>PROJECT_ID</key>
-	<string>franceconnect-754fe</string>
+	<string>switzerlandsocial-65d1a</string>
 	<key>STORAGE_BUCKET</key>
-	<string>franceconnect-754fe.appspot.com</string>
+	<string>switzerlandsocial-65d1a.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:511816435178:ios:45f83dbcf3fd7d48489e93</string>
+	<string>1:195210156102:ios:0944d7a673a425c9cb1247</string>
 </dict>
 </plist>

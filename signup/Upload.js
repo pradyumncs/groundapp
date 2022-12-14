@@ -69,7 +69,7 @@ const Upload = () => {
     });
 
 
-    var items = Array(22, 23, 24, 25, 26, 27, 28, 29, 30, 31);
+    var items = Array(22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32);
     var a = items[Math.floor(Math.random() * items.length)];
     var age = String(a);
     console.log(age)
@@ -85,7 +85,7 @@ const Upload = () => {
     var SubRegion = String(di);
     console.log(SubRegion)
 
-    var States = "Gujarat"
+    var States = "Maharastra"
 
     var Showme = "Men"
 

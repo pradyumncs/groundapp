@@ -1,0 +1,15 @@
+const firebaseConfig = {
+  apiKey: "AIzaSyBWqDGfiXc7O3CSggLCFFBJ2kKDKXF7laE",
+  authDomain: "naamo-1b2d9.firebaseapp.com",
+  projectId: "naamo-1b2d9",
+  storageBucket: "naamo-1b2d9.appspot.com",
+  messagingSenderId: "715510157016",
+  appId: "1:715510157016:web:dbf42ec0293d34839f51ad",
+  measurementId: "G-6FQT04SBV1"
+};
+
+
+
+https://pages.flycricket.io/naamo-odia-dating/privacy
+
+ead1e8ae-6075-4a53-bac2-d374f9e6e879

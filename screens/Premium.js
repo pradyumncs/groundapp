@@ -20,12 +20,14 @@ const Premium = () => {
 
     return (
         <View style={styles.container}>
-            <View>
-                <Text>
+            <View style={tw("items-center pt-4")}>
+                <Text style={tw("text-center text-lg font-semibold")}>
                     Get Premium
                 </Text>
 
             </View>
+            <View style={tw("p-4")} />
+            <View style={tw("p-2")} />
             <FlatList data={data} renderItem={({ item }) => <Onboardingitem item={item} />}
                 horizontal
                 showsHorizontalScrollIndicator={false}
@@ -50,7 +52,7 @@ const Premium = () => {
                 <Paginator data={data} scrollX={scrollX} />
             </View>
             <View>
-                <Text>ss</Text>
+                <Text>.</Text>
             </View>
 
         </View>
@@ -59,7 +61,7 @@ const Premium = () => {
 
 const styles = StyleSheet.create({
     container: {
-
+        backgroundColor: "#FFCB37",
         justifyContent: 'center',
         alignItems: 'center'
     },

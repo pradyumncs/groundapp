@@ -40,7 +40,6 @@ const StackNavigator = () => {
             {user ? (
                 <>
 
-
                     <Stack.Group>
                         <Stack.Screen name="BottomNavigation" component={BottomNavigation} />
                         <Stack.Screen name="First" component={FirstScreen} />
@@ -50,8 +49,6 @@ const StackNavigator = () => {
                         <Stack.Screen name="Message" component={MessageScreen} />
 
                     </Stack.Group>
-
-
 
                     <Stack.Group>
                         <Stack.Screen name="Name" component={Names} />
@@ -69,6 +66,11 @@ const StackNavigator = () => {
                         <Stack.Screen name="Learn" component={Learn} />
 
                     </Stack.Group>
+
+
+
+
+
 
 
 
