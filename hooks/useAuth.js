@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
 
 
     GoogleSignin.configure({
-        webClientId: '195210156102-e6esekokkv2nefhb5jun3ett6g9eik7j.apps.googleusercontent.com',
+        webClientId: '913038664899-oi6flpcrlkfvuuvc87diej3pvngv6mul.apps.googleusercontent.com',
     });
 
     function onAuthStateChanged(user) {

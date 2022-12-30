@@ -2,6 +2,7 @@ module.exports = {
   content: ['App.js',
     './signup//*.{html,js}',
     './screens//*.{html,js}',
+    './Premium//*.{html,js}',
     './components//*.{html,js}'],
 
   theme: {

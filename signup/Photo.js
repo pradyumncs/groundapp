@@ -73,9 +73,11 @@ const Photo = () => {
     let countrya = route.params.country
     let statea = route.params.state
     let subregiona = route.params.subregion
+    let numbera = route.params.number
 
-
-
+    console.log(numbera)
+    console.log(numbera)
+    console.log(numbera)
     const metadata = {
         contentType: 'image/png',
     };
@@ -148,6 +150,7 @@ const Photo = () => {
                         Country: countrya,
                         States: statea,
                         SubRegion: subregiona,
+                        Number: numbera,
                         timestamp: serverTimestamp(),
                     })
                         .then(() => {

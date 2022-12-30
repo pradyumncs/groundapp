@@ -8,83 +8,40 @@ import { StyleSheet } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as Location from 'expo-location';
 
-const Age = () => {
+const Number = () => {
     const tw = useTailwind();
-    const [Age, setAge] = React.useState("");
+    const [Number, setNumber] = React.useState("");
     const navigation = useNavigation();
-    const [buttonTitle, setButtonTitle] = useState("Continue");
+    const [buttonTitle, setButtonTitle] = useState("Next");
     const route = useRoute();
-    const [location, setLocation] = useState(null);
-    const [errorMsg, setErrorMsg] = useState(null);
 
 
 
-    var city;
-
-    useEffect(() => {
-        (async () => {
-
-            let { status } = await Location.requestForegroundPermissionsAsync();
-            if (status !== 'granted') {
-
-                setErrorMsg('Without your location we can not show users near your area');
-                return;
-            }
-
-            let location = await Location.getCurrentPositionAsync({});
-            let z = await Location.getCurrentPositionAsync({});
-
-            let address = await Location.reverseGeocodeAsync(location.coords)
-            let ada = await Location.reverseGeocodeAsync(z.coords)
 
 
-            city = (ada[0].city)
-            setLocation(address);
+    const incompleteForm = !Number;
 
 
-
-        })();
-    }, []);
 
     let text = '';
 
-    let countrya = 'null';
-    let statea = 'null';
-    let subregiona = 'null';
-
-
-    if (errorMsg) {
-        text = errorMsg;
-
-    } else if (location) {
-
-
-        countrya = location[0].country
-        subregiona = location[0].subregion
-        statea = location[0].region
-
-
-        //text = (location.city)
-    }
-
-    console.log(location)
-    console.log(countrya)
-    console.log(statea)
-    console.log(subregiona)
-    console.log("ageeee")
-
-
-    const incompleteForm = !Age;
-
     let usernamea = route.params.Username
-    console.log(usernamea)
-    console.log(usernamea)
+    let agea = route.params.Age
+    let countrya = route.params.country
+    let statea = route.params.state
+    let subregiona = route.params.subregion
+
+
+
+
+
 
     const Register = () => {
 
 
-        navigation.navigate("Number", {
-            Age: Age,
+        navigation.navigate("Gender", {
+            Age: agea,
+            Num: Number,
             Username: usernamea,
             country: countrya,
             state: statea,
@@ -112,17 +69,18 @@ const Age = () => {
 
                     <Image source={pr} />
                     <Text style={styles.buttonText}>
-                        What's your Age? {"\n"}
+                        What's your Number? {"\n"}
 
                     </Text>
-                    <Text style={styles.buttonTextsm}>You Wont be able to change this later</Text>
+                    <Text style={styles.buttonTextsm}>Your Number will be displayed to premium users . You can also skip this option</Text>
 
 
                     <Input
                         style={styles.input}
-                        onChangeText={(Age) => setAge(Age.replace(/[^\d]/g, ''))}
-                        value={Age}
-                        maxLength={2}
+                        onChangeText={(Number) => setNumber(Number.replace(/[^\d]/g, ''))}
+                        type='tel'
+                        value={Number}
+                        maxLength={14}
 
                     />
 
@@ -130,10 +88,10 @@ const Age = () => {
 
                 <View style={tw("flex-1 items-center  pt-1 mb-10")}>
                     <TouchableOpacity
-                        disabled={incompleteForm}
+
                         style={[
                             tw("w-64 p-3 rounded-xl  absolute bottom-1 bg-white"),
-                            incompleteForm ? tw("bg-gray-400") : tw("bg-white"),
+                            incompleteForm ? tw("bg-white") : tw("bg-white"),
                             styles.shadow,
                         ]}
                         onPress={Register}
@@ -186,4 +144,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Age
+export default Number

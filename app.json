@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "Switzerland Social",
-    "slug": "switzerlandsocial",
+    "name": "Sincere",
+    "slug": "sincere",
     "version": "1.0.0",
-    "owner": "tutorprojects",
+    "owner": "weconnectgroup",
     "plugins": [
       [
         "expo-build-properties",
@@ -38,7 +38,7 @@
     "ios": {
       "googleServicesFile": "./GoogleService-Info.plist",
       "supportsTablet": true,
-      "bundleIdentifier": "com.tutorprojects.switzerlandsocial",
+      "bundleIdentifier": "com.weconnectgroup.sincere",
       "buildNumber": "1",
       "infoPlist": {
         "ACCESS_FINE_LOCATION": "Turning on location service allows us access to show when friends are nearby ",
@@ -55,7 +55,7 @@
         "foregroundImage": "./appassets/logoo.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.tutorprojects.switzerlandsocial",
+      "package": "com.weconnectgroup.sincere",
       "versionCode": 1
     },
     "web": {
@@ -63,7 +63,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "042ac549-9024-4d47-916f-ac8119797423"
+        "projectId": "82ca0820-00d5-4681-983a-32d70a3b2107"
       }
     }
   }

@@ -13,8 +13,11 @@ import item from '../assets/inactive.png';
 import like from '../assets/like.png';
 import dislike from '../assets/dislike.png';
 import star from '../assets/star.png';
+import calling from '../assets/callhomescreen.png';
+import messages from '../assets/messagehomescreen.png';
 import { MaterialIcons } from '@expo/vector-icons';
 import BottomNavigation from "./BottomNavigation";
+import Purchases from 'react-native-purchases';
 import {
     collection,
     isGreaterThanOrEqualTo,
@@ -32,7 +35,10 @@ import {
 } from "@firebase/firestore";
 import { db } from "../firebase";
 import generateId from "../lib/generateid";
-
+const APIKeys = {
+    apple: "goog_QOKCJJKzoThDlOPNGGZdfBxQPic",
+    google: "goog_QOKCJJKzoThDlOPNGGZdfBxQPic",
+};
 
 
 
@@ -45,6 +51,9 @@ const HomeScreen = () => {
     const [cd, setcd] = useState([]);
     const tw = useTailwind();
     const [modalVisible, setModalVisible] = useState(false);
+    const [modalVisibleyescall, setModalVisibleyescall] = useState(false);
+    const [modalVisiblenocall, setModalVisiblenocall] = useState(false);
+    const [userstatepro, setUserstatepro] = useState(false);
 
     if (!user.uid) {
         user.uid = user.user.uid
@@ -64,6 +73,7 @@ const HomeScreen = () => {
     let arrbooks = []
     let books = []
 
+
     useLayoutEffect(
         () =>
             onSnapshot(doc(db, "users", user.uid), (snapshot) => {
@@ -74,7 +84,28 @@ const HomeScreen = () => {
         []
     );
 
+    useEffect(() => {
+        const magic = async () => {
+            Purchases.setDebugLogsEnabled(true);
+            Purchases.configure({ apiKey: APIKeys.google });
 
+            const CustomerInfo = await Purchases.getCustomerInfo();
+            if (typeof CustomerInfo.entitlements.active['pro'] !== "undefined") {
+
+
+                setUserstatepro(true)
+                console.log(userstatus)
+            }
+            else {
+
+
+
+                setUserstatepro(false)
+
+            }
+        }
+        magic();
+    }, []);
 
     useEffect(() => {
         let unsub;
@@ -256,7 +287,6 @@ const HomeScreen = () => {
     return (
 
         <SafeAreaView style={tw("flex-1")}>
-
 
 
             {/* Header */}
@@ -460,14 +490,65 @@ const HomeScreen = () => {
                         </View>
                     </View>
                 </Modal>
+                <Modal
+                    animationType="slide"
+                    transparent={true}
+                    visible={modalVisiblenocall}
+                    onRequestClose={() => {
+                        Alert.alert("Modal has been closed.");
+                        setModalVisiblenocall(!modalVisiblenocall);
+                    }}
+                >
+
+                    <View style={styles.centeredView}>
+
+                        <View style={styles.modalView}>
+                            <TouchableOpacity style={[
+                                tw(
+                                    "absolute top-0 right-0 "
+                                )
+
+                            ]}>
+
+                                <AntDesign name="closecircle" size={40} color="black"
+                                    onPress={() => setModalVisiblenocall(!modalVisiblenocall)}
+                                />
+
+                            </TouchableOpacity>
+                            <Text style={styles.modalText}>To Get This Users Number Immidietly  </Text>
+                            <View style={tw("p-1")} />
+                            <Text style={styles.modalTextupgrade}> Please Upgrade to Premium ☑️ </Text>
+
+                            <Text style={styles.modalTexts}>Unlock this users number and start having a phone call</Text>
+                            <View style={tw("p-3")}></View>
+                            <Image style={styles.titlenumber} source={require("../assets/blurnumber.png")} />
+                            <View style={tw("p-3")}></View>
+                            <View style={tw("p-3")}></View>
+                            <View style={tw("p-3")}></View>
+                            <TouchableOpacity
+                                style={[tw("rounded-3xl p-3 bg-yellow-400"),
+                                styles.shadow]}
+                                onPress={() => navigation.navigate("Profile")}
+                            >
+                                <Text style={tw("text-center text-black text-lg")}>
+                                    Get Premium
+                                </Text>
+                            </TouchableOpacity>
+                            <View style={tw("p-3")}></View>
+
+                        </View>
+                    </View>
+                </Modal>
+                <View style={tw("p-1")} />
                 <TouchableOpacity
                     onPress={() => swipeRef.current.swipeLeft()}
                     style={tw(
                         "items-center justify-center rounded-full w-16 h-16 "
                     )}
                 >
-                    <Image source={dislike} />
+                    <Image source={messages} />
                 </TouchableOpacity>
+                <View style={tw("p-1")} />
                 <TouchableOpacity
                     onPress={() => swipeRef.current.swipeRight()}
                     style={tw(
@@ -477,21 +558,35 @@ const HomeScreen = () => {
                     <Image source={like} />
 
                 </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={() => swipeRef.current.swipeRight()}
-                    style={tw(
-                        "items-center justify-center rounded-full w-16 h-16 "
-                    )}
-                >
-                    <Image source={star} />
+                <View style={tw("p-1")} />
+                {userstatepro ?
+                    <TouchableOpacity
+                        onPress={() => swipeRef.current.swipeRight()}
+                        style={tw(
+                            "items-center justify-center rounded-full w-16 h-16 "
+                        )}
+                    >
+                        <Image source={calling} />
 
-                </TouchableOpacity>
+                    </TouchableOpacity>
+                    : <TouchableOpacity
+                        onPress={() => setModalVisiblenocall(!modalVisiblenocall)}
+                        style={tw(
+                            "items-center justify-center rounded-full w-16 h-16 "
+                        )}
+                    >
+                        <Image source={calling} />
+
+                    </TouchableOpacity>
+                }
+                <View>
 
 
+
+
+                </View>
 
             </View>
-
-
             <TouchableOpacity
                 onPress={() => setModalVisible(!modalVisible)}
                 style={tw(
@@ -504,7 +599,6 @@ const HomeScreen = () => {
                 >Hide & Report</Text>
 
             </TouchableOpacity>
-
 
 
         </SafeAreaView >
@@ -537,6 +631,13 @@ const styles = StyleSheet.create({
         resizeMode: 'cover',
         justifyContent: 'center',
         width: 155,
+        height: 55,
+    },
+    titlenumber: {
+
+        resizeMode: 'cover',
+        justifyContent: 'center',
+        width: 300,
         height: 55,
     },
     shadow: {
@@ -598,6 +699,13 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontSize: 25,
         fontWeight: "bold",
+    },
+    modalTextupgrade: {
+        marginBottom: 15,
+        textAlign: "center",
+        fontSize: 25,
+        fontWeight: "bold",
+        color: "red",
     },
     modalTexts: {
         marginBottom: 15,

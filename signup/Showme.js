@@ -30,6 +30,7 @@ const Showme = () => {
     let countrya = route.params.country
     let statea = route.params.state
     let subregiona = route.params.subregion
+    let numbera = route.params.number
 
     const Males = () => {
 
@@ -41,6 +42,7 @@ const Showme = () => {
             country: countrya,
             state: statea,
             subregion: subregiona,
+            number: numbera
         });
     };
 
@@ -54,6 +56,7 @@ const Showme = () => {
             country: countrya,
             state: statea,
             subregion: subregiona,
+            number: numbera
 
         });
     };

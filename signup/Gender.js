@@ -30,6 +30,7 @@ const Gender = () => {
     let countrya = route.params.country
     let statea = route.params.state
     let subregiona = route.params.subregion
+    let numbera = route.params.Num
 
 
     const Males = () => {
@@ -41,6 +42,8 @@ const Gender = () => {
             country: countrya,
             state: statea,
             subregion: subregiona,
+            number: numbera
+
         });
     };
 
@@ -50,8 +53,13 @@ const Gender = () => {
             Age: agea,
             Username: usernamea,
             Gender: Female,
+            number: numbera,
+            country: countrya,
+            state: statea,
+            subregion: subregiona,
         });
     };
+
 
 
 

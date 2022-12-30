@@ -17,7 +17,7 @@ const Onboardingitem = ({ item }) => {
             </View>
 
             <View style={tw("items-center ")}>
-                <Text style={tw("text-center text-xl font-semibold")}>
+                <Text style={tw("text-center text-lg font-semibold")}>
                     {item.title}
                 </Text>
 
@@ -33,13 +33,14 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+
     },
     image: {
 
 
         width: 300,
-        height: 100,
+        height: 90,
 
     },
     zas: {

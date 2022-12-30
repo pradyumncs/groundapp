@@ -98,13 +98,13 @@ const SignInEmail = () => {
                         Learn how we process your data in our {' '}
                         <Text
                             style={styles.hyperli}
-                            onPress={() => { Linking.openURL('https://pages.flycricket.io/switzerland-social/privacy') }}>
+                            onPress={() => { Linking.openURL('https://pages.flycricket.io/sincere/privacy') }}>
                             Privacy policy
                         </Text>
                         {"\n"} and {' '}
                         <Text
                             style={styles.hyperli}
-                            onPress={() => { Linking.openURL('https://pages.flycricket.io/switzerland-social/terms') }}>
+                            onPress={() => { Linking.openURL('https://pages.flycricket.io/sincere/terms') }}>
                             Terms of Service.
                         </Text>
 

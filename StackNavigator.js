@@ -24,6 +24,8 @@ import Test from './screens/Test';
 import SignInEmail from './screens/SigninEmail';
 import BottomNavigation from './screens/BottomNavigation';
 import Premium from './screens/Premium';
+import Premiumoffer from './Premium/Premiumoffer';
+import Number from './signup/Number';
 const Stack = createNativeStackNavigator();
 
 
@@ -56,6 +58,8 @@ const StackNavigator = () => {
                         <Stack.Screen name="Gender" component={Gender} />
                         <Stack.Screen name="Showme" component={Showme} />
                         <Stack.Screen name="Photo" component={Photo} />
+                        <Stack.Screen name="Number" component={Number} />
+
 
                     </Stack.Group>
 
@@ -64,7 +68,8 @@ const StackNavigator = () => {
                         <Stack.Screen name="Upload" component={Upload} />
                         <Stack.Screen name="Test" component={Test} />
                         <Stack.Screen name="Learn" component={Learn} />
-
+                        <Stack.Screen name="Premium" component={Premium} />
+                        <Stack.Screen name="Premiumoffer" component={Premiumoffer} />
                     </Stack.Group>
 
 
@@ -81,9 +86,7 @@ const StackNavigator = () => {
                     <Stack.Group screenOptions={{ presentation: "modal" }}>
                         <Stack.Screen name="Modal" component={ModalScreen} />
                     </Stack.Group>
-                    <Stack.Group screenOptions={{ presentation: "modal" }}>
-                        <Stack.Screen name="Premium" component={Premium} />
-                    </Stack.Group>
+
 
                 </>
             ) : (

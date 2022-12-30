@@ -32,7 +32,11 @@ import {
 } from "@firebase/firestore";
 import { db } from "../firebase";
 import like from '../assets/like.png';
-
+import Purchases from 'react-native-purchases';
+const APIKeys = {
+    apple: "goog_QOKCJJKzoThDlOPNGGZdfBxQPic",
+    google: "goog_QOKCJJKzoThDlOPNGGZdfBxQPic",
+};
 
 
 const ProfileEdit = () => {
@@ -62,8 +66,21 @@ const ProfileEdit = () => {
     const [fontsLoaded] = useFonts({
         'SFBold': require('../assets/SF-Pro-Text-Semibold.otf'),
     });
+    useEffect(() => {
+        const magic = async () => {
+            Purchases.setDebugLogsEnabled(true);
+            Purchases.configure({ apiKey: APIKeys.google });
 
-
+            const CustomerInfo = await Purchases.getCustomerInfo();
+            if (typeof CustomerInfo.entitlements.active['pro'] !== "undefined") {
+                console.log("user is pro")
+            }
+            else {
+                console.log("user is not pro")
+            }
+        }
+        magic();
+    }, []);
 
 
 
@@ -241,8 +258,12 @@ const ProfileEdit = () => {
                             <View style={tw("p-1")}></View>
 
                             <View style={tw("flex-col items-center justify-center p-1 ")}>
+                                <TouchableOpacity
 
-                                <Text style={styles.buttonTextBold}>Premium</Text>
+
+                                >
+                                    <Text style={styles.buttonTextBold}>Premium</Text>
+                                </TouchableOpacity>
                                 <Text
                                     style={[
                                         tw("text-center"),
@@ -415,7 +436,7 @@ const styles = StyleSheet.create({
         width: 170,  // Setting up image width. 
         height: 170,  // Setting up image height.  
         borderWidth: 4,  // Set border width.  
-        borderColor: '#ca5cdd',  // Set border Hex Color code here. 
+        borderColor: '#EEE5D1',  // Set border Hex Color code here. 
         borderRadius: 99,
 
 

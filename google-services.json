@@ -1,72 +1,72 @@
 {
   "project_info": {
-    "project_number": "195210156102",
-    "project_id": "switzerlandsocial-65d1a",
-    "storage_bucket": "switzerlandsocial-65d1a.appspot.com"
+    "project_number": "913038664899",
+    "project_id": "sincere-25a86",
+    "storage_bucket": "sincere-25a86.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:195210156102:android:8f950b5d7f0d3ae1cb1247",
+        "mobilesdk_app_id": "1:913038664899:android:bbb533f0d303ed2ec52e76",
         "android_client_info": {
-          "package_name": "com.tutorprojects.switzerlandsocial"
+          "package_name": "com.weconnectgroup.sincere"
         }
       },
       "oauth_client": [
         {
-          "client_id": "195210156102-6akk9uq2q910n7vhn8pgqn7qfqj8mnmu.apps.googleusercontent.com",
+          "client_id": "913038664899-1gm595ju2nnfgob8rj9lb79amvcseaa8.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.tutorprojects.switzerlandsocial",
-            "certificate_hash": "542ca0b398e9914d23f9dd32bbe64a274443452b"
+            "package_name": "com.weconnectgroup.sincere",
+            "certificate_hash": "84daaafbff932e8731b487119f7ea82a14f006bc"
           }
         },
         {
-          "client_id": "195210156102-dmjpnmmb68nqi3grf41t592qn04c3443.apps.googleusercontent.com",
+          "client_id": "913038664899-41oe1o2uktetefm721vrg0974tikka7q.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.tutorprojects.switzerlandsocial",
-            "certificate_hash": "f1ec8c4e75f802897212804675c00f313f250be1"
+            "package_name": "com.weconnectgroup.sincere",
+            "certificate_hash": "4f39ac41183d36ab7c5166ba9c0d25510737f647"
           }
         },
         {
-          "client_id": "195210156102-dvtl7pnm2u7jsag07k03o7v06j8o0vm6.apps.googleusercontent.com",
+          "client_id": "913038664899-9lm40i0llepc7ra89j85vgc7n2sqvl9o.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.tutorprojects.switzerlandsocial",
-            "certificate_hash": "be5e7533fea64ac3d5add1cc74a0632be4d62944"
+            "package_name": "com.weconnectgroup.sincere",
+            "certificate_hash": "d3f362978e5f78463600c99a420174d6815f6231"
           }
         },
         {
-          "client_id": "195210156102-nd871nvepifqcj9jpp95d843s7siq3k0.apps.googleusercontent.com",
+          "client_id": "913038664899-g032ob66o9m5a525vedmkacse63rfo2d.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.tutorprojects.switzerlandsocial",
-            "certificate_hash": "db317f456dde6a60f84d6243e2a439eb4bbba009"
+            "package_name": "com.weconnectgroup.sincere",
+            "certificate_hash": "beafeec59324f825f8a9aa28a8f90163b9c6c754"
           }
         },
         {
-          "client_id": "195210156102-e6esekokkv2nefhb5jun3ett6g9eik7j.apps.googleusercontent.com",
+          "client_id": "913038664899-oi6flpcrlkfvuuvc87diej3pvngv6mul.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDMNQ208hfRy0one2SmbPtubeMGcqHoKAc"
+          "current_key": "AIzaSyDt-oEspB2xwRs-sFSVYHhmeG2xHgjuLE0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "195210156102-e6esekokkv2nefhb5jun3ett6g9eik7j.apps.googleusercontent.com",
+              "client_id": "913038664899-oi6flpcrlkfvuuvc87diej3pvngv6mul.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "195210156102-n1bs2nuihhvcbn2vccltvhbcm89bg5of.apps.googleusercontent.com",
+              "client_id": "913038664899-7i532r5eu6dsvs0073hqqkr9fk2m6kvt.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.tutorprojects.switzerlandsocial"
+                "bundle_id": "com.weconnectgroup.sincere"
               }
             }
           ]

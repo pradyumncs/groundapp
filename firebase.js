@@ -8,14 +8,14 @@ import { getStorage } from "firebase/storage";
 import "firebase/compat/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBnbLZLi-ARlM7d7y9qE2dvg4iRuhZ3-X4",
-    authDomain: "switzerlandsocial-65d1a.firebaseapp.com",
-    projectId: "switzerlandsocial-65d1a",
-    storageBucket: "switzerlandsocial-65d1a.appspot.com",
-    messagingSenderId: "195210156102",
-    appId: "1:195210156102:web:899aa7f795e769a0cb1247",
-    measurementId: "G-4FM95F3ZVW"
-  };
+    apiKey: "AIzaSyAoIKBB850XMtdGuGVPGZe0TfIVhElYjko",
+    authDomain: "sincere-25a86.firebaseapp.com",
+    projectId: "sincere-25a86",
+    storageBucket: "sincere-25a86.appspot.com",
+    messagingSenderId: "913038664899",
+    appId: "1:913038664899:web:531e7caafc596c3dc52e76",
+    measurementId: "G-Z36DCXQKVS"
+};
 
 
 
