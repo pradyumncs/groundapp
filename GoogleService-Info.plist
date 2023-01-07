@@ -3,23 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>913038664899-7i532r5eu6dsvs0073hqqkr9fk2m6kvt.apps.googleusercontent.com</string>
+	<string>437647564979-hv5e9l41gk3gj2botjskrs6vrfdoipc6.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.913038664899-7i532r5eu6dsvs0073hqqkr9fk2m6kvt</string>
+	<string>com.googleusercontent.apps.437647564979-hv5e9l41gk3gj2botjskrs6vrfdoipc6</string>
 	<key>ANDROID_CLIENT_ID</key>
-	<string>913038664899-1gm595ju2nnfgob8rj9lb79amvcseaa8.apps.googleusercontent.com</string>
+	<string>437647564979-1fggtf4i812fqeat4kd7sbo737l77dgi.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyC2Vv9xUZWTA8p1YpmCDxtMgBHLgjV1QAA</string>
+	<string>AIzaSyBGmjp92hBpYzvDzOD6lLqxPn9WvRbXP6w</string>
 	<key>GCM_SENDER_ID</key>
-	<string>913038664899</string>
+	<string>437647564979</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.weconnectgroup.sincere</string>
+	<string>com.weconnectgroup.welocal</string>
 	<key>PROJECT_ID</key>
-	<string>sincere-25a86</string>
+	<string>welocal-933c1</string>
 	<key>STORAGE_BUCKET</key>
-	<string>sincere-25a86.appspot.com</string>
+	<string>welocal-933c1.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:913038664899:ios:09accee40c453a67c52e76</string>
+	<string>1:437647564979:ios:5451717328acaf4d64d0c6</string>
 </dict>
 </plist>

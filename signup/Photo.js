@@ -235,7 +235,7 @@ const Photo = () => {
 
             </View>
 
-            <View style={tw("divBox flex items-center justify-center h-1/2 w-full")}>
+            <View style={tw("flex items-center justify-center h-1/2 w-full")}>
                 <TouchableOpacity
                     //  onPress={() => navigation.goBack()}
                     style={[tw("p-7"),

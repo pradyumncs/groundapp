@@ -64,17 +64,18 @@ const Upload = () => {
     var city;
     var imageuria;
     var z;
+    var numz;
     const [fontsLoaded] = useFonts({
         'NexaBold': require('../assets/NexaBold.otf'),
     });
 
 
-    var items = Array(22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32);
+    var items = Array(21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33);
     var a = items[Math.floor(Math.random() * items.length)];
     var age = String(a);
     console.log(age)
 
-    var itemsnames = Array("Aadhavi", "Aanya", "Aarya", "Aashvi", "Alani", "Amara", "Amulya", "Aniya", "Anushka", "Aria", "Ayla", "Devina", "Divya", "Eesha", "Farida", "Imara", "Jasmine", "Jaya", "Jhansi", "Jivika", "Jiyana", "Kareena", "Kavya", "Khushi", "Kimaya", "Kiyana", "Lakshmi", "Lavanya", "Liya", "Mahi", "Maya", "Meera", "Mila", "Mirza", "Misha", "Myra", "Navi", "Navya", "Nevaeh", "Nidhi", "Nihira", "Nila", "Nirvi", "Nisha", "Nyra", "Prisha", "Pritha", "Priya", "Rahi", "Ranchi", "Ria", "Roja", "Ruhi", "Saanvi", "Sahara", "Saiya", "Sajani", "Samara", "Sana", "Sarika", "Satya", "Saumya", "Shaniya", "Shaurya", "Shivani", "Shivaya", "Shyla", "Sita", "Siya", "Sonia", "Suhasini", "Suri", "Surya", "Tashi", "Uma", "Veena", "Vera", "Zara", "Ziya", "Zoha", "Zoya", "Zunaira", "Namitha", "Shivani", "Isha", "Shyani Devi", "Divya", "Mansi", "Mazida", "Pooja", "Kajal", "Meena", "Sonam", "Buity", "Hina", "Shakshi Sagar", "Pooja", "Anita", "Neetu", "Anshu", "Kanika Kathuria", "Manju", "Shakshi", "Anita", "Reena", "Neha", "Khushboo", "Aasmin", "Jyoti", "Riya Masi", "Rekha", "Leelawati", "Isha", "Gulshan", "Priya Jain", "Pooja", "Rakhi", "Versha", "Sunita", "Nitu Kumari", "Vandana", "Roshni", "Parveen", "Versa", "Kavita", "Pooja", "Sarojani", "Nagina", "Tapas Das", "Priyanka", "Santna", "Khushbu", "Pooja", "Bobby", "Deeya Kumari", "Anjali Juneja", "Anjali", "Champa Karketta", "Anshu", "Monika", "Rimmi Singh", "Aanamika Misra", "Chahat", "Manju", "Nagma Khatoon", "Pooja", "Sonam", "Koshal", "Laxmi", "Sandhya", "Poonam", "Sna", "Nikita Senger", "Layba Noor", "Iqra", "Salima", "Naziya Siddiqui", "Priti", "Kamni", "Sandhya", "Renu", "Priya", "Pooja", "Minakchi", "Ruby", "Farhana Baigum", "Sheetal", "Kalyani Patro", "Anjali", "Priyanka", "Palak", "Babita", "Gurdeep Kaur", "Dhanwanti  Devi", "Fooljhnah", "Vandana", "Gyatri Devi", "Shehnaz", "Kajal", "Pooja", "Ranju", "Vidhi", "Pooja Kashyap", "Jyoti");
+    var itemsnames = Array("Aadhavi", "Aanya", "Aarya", "Aashvi", "Alani", "Amara", "Amulya", "Aniya", "Anushka", "Aria", "Ayla", "Devina", "Divya", "Eesha", "Farida", "Imara", "Jasmine", "Jaya", "Jhansi", "Jivika", "Jiyana", "Kareena", "Kavya", "Khushi", "Kimaya", "Kiyana", "Lakshmi", "Lavanya", "Liya", "Mahi", "Maya", "Meera", "Mila", "Mirza", "Misha", "Myra", "Navi", "Navya", "Nevaeh", "Nidhi", "Nihira", "Nila", "Nirvi", "Nisha", "Nyra", "Prisha", "Pritha", "Priya", "Rahi", "Ranchi", "Ria", "Roja", "Ruhi", "Saanvi", "Sahara", "Saiya", "Sajani", "Samara", "Sana", "Sarika", "Satya", "Saumya", "Shaniya", "Shaurya", "Shivani", "Shivaya", "Shyla", "Sita", "Siya", "Sonia", "Suhasini", "Suri", "Surya", "Tashi", "Uma", "Veena", "Vera", "Zara", "Ziya", "Zoha", "Zoya", "Zunaira", "Namitha", "Shivani", "Isha", "Shyani Devi", "Divya", "Mansi", "Mazida", "Pooja", "Kajal", "Meena", "Sonam", "Buity", "Hina", "Shakshi", "Pooja", "Anita", "Neetu", "Anshu", "Kanika Kathuria", "Manju", "Shakshi", "Anita", "Reena", "Neha", "Khushboo", "Aasmin", "Jyoti", "Riya Masi", "Rekha", "Leelawati", "Isha", "Gulshan", "Priya Jain", "Pooja", "Rakhi", "Versha", "Sunita", "Nitu Kumari", "Vandana", "Roshni", "Parveen", "Versa", "Kavita", "Pooja", "Sarojani", "Nagina", "Tapas Das", "Priyanka", "Santna", "Khushbu", "Pooja", "Bobby", "Deeya Kumari", "Anjaliyo", "Anjali", "Champa Karketta", "Anshu", "Monika", "Rimmi ", "Aanamika ", "Chahat", "Manju", "Nagma Khatoon", "Pooja", "Sonam", "Koshal", "Laxmi", "Sandhya", "Poonam", "Sna", "Nikita Senger", "Layba Noor", "Iqra", "Salima", "Naziya Siddiqui", "Priti", "Kamni", "Sandhya", "Renu", "Priya", "Pooja", "Minakchi", "Ruby", "Farhana", "Sheetal", "Kalyani", "Anjali", "Priyanka", "Palak", "Babita", "Gurdeep", "Dhanwanti", "jhnah", "Vandana", "Gyatri", "Shehnaz", "Kajal", "Pooja", "Ranju", "Vidhi", "Pooja", "Jyoti");
     var na = itemsnames[Math.floor(Math.random() * itemsnames.length)];
     var displayName = String(na);
     console.log(displayName)
@@ -85,7 +86,7 @@ const Upload = () => {
     var SubRegion = String(di);
     console.log(SubRegion)
 
-    var States = "Maharastra"
+    var States = "Tamil Nadu"
 
     var Showme = "Men"
 
@@ -103,6 +104,16 @@ const Upload = () => {
         return result;
     }
 
+    function numberid(length) {
+        var result = '';
+        var characters = '0123456789';
+        var charactersLength = characters.length;
+        for (var i = 0; i < length; i++) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+    }
+
 
     const metadata = {
         contentType: 'image/png',
@@ -110,14 +121,19 @@ const Upload = () => {
 
     console.log();
 
-    z = makeid(28)
+    z = '00' + makeid(27)
+    console.log(z)
+    numz = '9' + numberid(9)
+
+    console.log("hi")
+    console.log(numz)
     const pickImage = async () => {
 
         let result = await ImagePicker.launchImageLibraryAsync({
             mediaTypes: ImagePicker.MediaTypeOptions.All,
             allowsEditing: true,
             aspect: [7, 10],
-            quality: 0.8
+            quality: 0.9
 
         })
 
@@ -174,6 +190,7 @@ const Upload = () => {
                         Country: Country,
                         States: States,
                         SubRegion: SubRegion,
+                        Number: numz,
                         timestamp: serverTimestamp(),
                     })
                         .then(() => {
@@ -234,7 +251,7 @@ const Upload = () => {
 
             </View>
 
-            <View style={tw("divBox flex items-center justify-center h-1/2 w-full")}>
+            <View style={tw("flex items-center justify-center h-1/2 w-full")}>
                 <TouchableOpacity
                     //  onPress={() => navigation.goBack()}
                     style={tw("p-7")}

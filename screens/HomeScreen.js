@@ -35,10 +35,7 @@ import {
 } from "@firebase/firestore";
 import { db } from "../firebase";
 import generateId from "../lib/generateid";
-const APIKeys = {
-    apple: "goog_QOKCJJKzoThDlOPNGGZdfBxQPic",
-    google: "goog_QOKCJJKzoThDlOPNGGZdfBxQPic",
-};
+
 
 
 
@@ -51,9 +48,13 @@ const HomeScreen = () => {
     const [cd, setcd] = useState([]);
     const tw = useTailwind();
     const [modalVisible, setModalVisible] = useState(false);
+    const [modalPremiuma, setModalPremiuma] = useState(false);
     const [modalVisibleyescall, setModalVisibleyescall] = useState(false);
     const [modalVisiblenocall, setModalVisiblenocall] = useState(false);
+    const [modalVisiblenomessage, setModalVisiblenomessage] = useState(false);
     const [userstatepro, setUserstatepro] = useState(false);
+    const [noo, setnoo] = useState('');
+
 
     if (!user.uid) {
         user.uid = user.user.uid
@@ -72,7 +73,7 @@ const HomeScreen = () => {
     var UserImage
     let arrbooks = []
     let books = []
-
+    var sita
 
     useLayoutEffect(
         () =>
@@ -87,14 +88,14 @@ const HomeScreen = () => {
     useEffect(() => {
         const magic = async () => {
             Purchases.setDebugLogsEnabled(true);
-            Purchases.configure({ apiKey: APIKeys.google });
+
 
             const CustomerInfo = await Purchases.getCustomerInfo();
             if (typeof CustomerInfo.entitlements.active['pro'] !== "undefined") {
 
 
                 setUserstatepro(true)
-                console.log(userstatus)
+
             }
             else {
 
@@ -162,7 +163,7 @@ const HomeScreen = () => {
 
             let asa = []
             const m = query(ar,)
-            const q = query(m, where("gender", "==", Showmemes), orderBy("timestamp", "desc"), limit(99));
+            const q = query(m, where("gender", "==", Showmemes), orderBy("timestamp", "desc"), limit(300));
 
             unsub = onSnapshot(
                 q,
@@ -230,7 +231,16 @@ const HomeScreen = () => {
         setDoc(doc(db, "users", user.uid, "passes", userSwiped.id), userSwiped);
     };
 
+
     const swipeRight = async (cardIndex) => {
+
+        {
+            userstatepro ?
+                console.log("madara")
+                :
+                console.log("dyee")
+        }
+
         if (!profiles[cardIndex]) return;
 
         const userSwiped = profiles[cardIndex];
@@ -266,7 +276,7 @@ const HomeScreen = () => {
                 } else {
                     //User has swiped as first interaction between the two or didn't get swiped on...
                     console.log(
-                        `You swiped on ${userSwiped.displayName} (${userSwiped.job})`
+                        `You swiped on ${userSwiped.displayName} `
                     );
                     setDoc(
                         doc(db, "users", user.uid, "swipes", userSwiped.id),
@@ -276,13 +286,76 @@ const HomeScreen = () => {
             }
         );
 
+
+
         //User has swiped as first interaction between the two...
-        console.log(`You swiped on ${userSwiped.displayName} (${userSwiped.job})`);
+        console.log(`You swiped on ${userSwiped.displayName} `);
         setDoc(doc(db, "users", user.uid, "swipes", userSwiped.id), userSwiped);
     };
 
 
+    const swipeRightyo = async (cardIndex) => {
 
+
+
+        if (!profiles[cardIndex]) return;
+
+        const userSwiped = profiles[cardIndex];
+        const loggedInProfile = await (
+            await getDoc(doc(db, "users", user.uid))
+        ).data();
+
+        //Check if the user swiped on you...
+        getDoc(doc(db, "users", userSwiped.id, "swipes", user.uid)).then(
+            (documentSnapshot) => {
+
+                //user has matched with you before you matched with them...
+                //Create a MATCH!
+                console.log(`Hooray, you matched with ${userSwiped.displayName}`);
+                setDoc(
+                    doc(db, "users", user.uid, "swipes", userSwiped.id),
+                    userSwiped
+                );
+                //CREATE A MATCH!
+                setDoc(doc(db, "matches", generateId(user.uid, userSwiped.id)), {
+                    users: {
+                        [user.uid]: loggedInProfile,
+                        [userSwiped.id]: userSwiped,
+                    },
+                    usersMatched: [user.uid, userSwiped.id],
+                    timestamp: serverTimestamp(),
+                });
+
+                navigation.navigate("Match", {
+                    loggedInProfile,
+                    userSwiped,
+                });
+
+            }
+        );
+
+        //User has swiped as first interaction between the two...
+        console.log(`You swiped on ${userSwiped.displayName} `);
+        setDoc(doc(db, "users", user.uid, "swipes", userSwiped.id), userSwiped);
+    };
+
+    const moreinfofunc = (cardIndex) => {
+        if (!profiles[cardIndex]) return;
+
+        const userSwiped = profiles[cardIndex];
+        console.log(`so the information is  ${userSwiped.displayName}`);
+
+
+    };
+
+    const funcs = () => {
+        return (
+
+            <View>
+                <Text>madra</Text>
+            </View>
+        )
+    }
 
     return (
 
@@ -321,9 +394,36 @@ const HomeScreen = () => {
                         console.log("Swipe PASS");
                         swipeLeft(cardIndex);
                     }}
+
+
                     onSwipedRight={(cardIndex) => {
-                        console.log("Swipe MATCH");
-                        swipeRight(cardIndex);
+                        {
+                            userstatepro ?
+
+                                swipeRightyo(cardIndex)
+                                :
+
+                                swipeRight(cardIndex)
+
+
+                        }
+
+                        {
+                            let count = cardIndex
+                            if (count == 0) {
+                                setModalPremiuma(!modalPremiuma)
+                                console.log(count)
+                            }
+
+
+                        }
+
+
+                    }}
+
+                    onTapCard={(cardIndex) => {
+                        console.log("Get more information");
+                        moreinfofunc(cardIndex);
                     }}
                     overlayLabels={{
                         left: {
@@ -357,6 +457,7 @@ const HomeScreen = () => {
                                 key={card.id}
                                 style={tw("relative bg-white h-5/6 rounded-xl")}
                             >
+
                                 <Text>{card.firstName}</Text>
                                 <Image
                                     style={tw("absolute top-0 h-full w-full rounded-xl")}
@@ -374,10 +475,28 @@ const HomeScreen = () => {
                                         <Text style={tw("text-xl font-bold")}>
                                             {card.displayName}
                                         </Text>
-                                        <Text>{card.job}</Text>
+
                                     </View>
+
+
+
+                                    {userstatepro ?
+                                        <Text style={styles.textStylenum}>{card.Number}</Text>
+                                        :
+                                        <View></View>
+
+
+                                    }
                                     <Text style={tw("text-2xl font-bold")}>{card.age}</Text>
+
+
+
+
+
+
+
                                 </View>
+
                             </View>
 
 
@@ -409,9 +528,63 @@ const HomeScreen = () => {
                 <Modal
                     animationType="slide"
                     transparent={true}
+                    visible={modalPremiuma}
+                    onRequestClose={() => {
+
+                        setModalPremiuma(!modalPremiuma);
+                    }}
+                >
+
+                    <View style={styles.centeredView}>
+
+                        <View style={styles.PremiumView}>
+
+                            <ImageBackground
+                                resizeMode="cover"
+                                style={styles.premiumimg}
+                                source={require("../assets/offer/offer4.png")}
+                            >
+                                <TouchableOpacity style={[
+                                    tw(
+                                        "absolute top-0 right-0 "
+                                    )
+
+                                ]}>
+
+                                    <AntDesign name="closecircle" size={32} color="white"
+                                        onPress={() => setModalPremiuma(!modalPremiuma)}
+                                    />
+
+
+                                </TouchableOpacity>
+                                <View style={tw("p-3")}></View>
+
+                                <TouchableOpacity
+                                    style={[tw("rounded-3xl p-3 bg-yellow-400 absolute inset-x-0 bottom-5 "),
+                                    styles.shadow]}
+                                    onPress={() => navigation.navigate("Profile")}
+                                >
+                                    <Text style={tw("text-center text-black text-lg")}>
+                                        Get Premium
+                                    </Text>
+                                </TouchableOpacity>
+
+                                <View style={tw("p-3")}></View>
+                                <View style={tw("p-1")} />
+                            </ImageBackground>
+                        </View>
+
+                    </View>
+
+                </Modal>
+
+
+                <Modal
+                    animationType="slide"
+                    transparent={true}
                     visible={modalVisible}
                     onRequestClose={() => {
-                        Alert.alert("Modal has been closed.");
+
                         setModalVisible(!modalVisible);
                     }}
                 >
@@ -493,9 +666,60 @@ const HomeScreen = () => {
                 <Modal
                     animationType="slide"
                     transparent={true}
+                    visible={modalVisiblenomessage}
+                    onRequestClose={() => {
+
+                        setModalVisiblenomessage(!modalVisiblenomessage);
+                    }}
+                >
+
+                    <View style={styles.centeredView}>
+
+                        <View style={styles.modalView}>
+                            <TouchableOpacity style={[
+                                tw(
+                                    "absolute top-0 right-0 "
+                                )
+
+                            ]}>
+
+                                <AntDesign name="closecircle" size={40} color="black"
+                                    onPress={() => setModalVisiblenomessage(!modalVisiblenomessage)}
+                                />
+
+                            </TouchableOpacity>
+                            <Text style={styles.modalText}>To Instantly message this Amazing Person  </Text>
+                            <View style={tw("p-1")} />
+                            <Text style={styles.modalTextupgrade}> Please Upgrade to Premium ☑️ </Text>
+                            <View style={tw("p-3")}></View>
+                            <Image
+                                style={tw("w-32 h-32 ")}
+                                source={require("../assets/messagegif3.gif")}
+                            />
+
+                            <View style={tw("p-3")}></View>
+                            <TouchableOpacity
+                                style={[tw("rounded-3xl p-3 bg-yellow-400"),
+                                styles.shadow]}
+                                onPress={() => navigation.navigate("Profile")}
+                            >
+                                <Text style={tw("text-center text-black text-lg")}>
+                                    Get Premium
+                                </Text>
+                            </TouchableOpacity>
+
+
+                        </View>
+                    </View>
+                </Modal>
+
+
+                <Modal
+                    animationType="slide"
+                    transparent={true}
                     visible={modalVisiblenocall}
                     onRequestClose={() => {
-                        Alert.alert("Modal has been closed.");
+
                         setModalVisiblenocall(!modalVisiblenocall);
                     }}
                 >
@@ -515,15 +739,19 @@ const HomeScreen = () => {
                                 />
 
                             </TouchableOpacity>
-                            <Text style={styles.modalText}>To Get This Users Number Immidietly  </Text>
+                            <Text style={styles.modalText}>To Get This Persons Number Immidietly  </Text>
                             <View style={tw("p-1")} />
                             <Text style={styles.modalTextupgrade}> Please Upgrade to Premium ☑️ </Text>
 
                             <Text style={styles.modalTexts}>Unlock this users number and start having a phone call</Text>
+                            <Image
+                                style={tw("w-20 h-20")}
+                                source={require("../assets/callgif.gif")}
+                            />
                             <View style={tw("p-3")}></View>
                             <Image style={styles.titlenumber} source={require("../assets/blurnumber.png")} />
                             <View style={tw("p-3")}></View>
-                            <View style={tw("p-3")}></View>
+
                             <View style={tw("p-3")}></View>
                             <TouchableOpacity
                                 style={[tw("rounded-3xl p-3 bg-yellow-400"),
@@ -539,15 +767,68 @@ const HomeScreen = () => {
                         </View>
                     </View>
                 </Modal>
-                <View style={tw("p-1")} />
-                <TouchableOpacity
-                    onPress={() => swipeRef.current.swipeLeft()}
-                    style={tw(
-                        "items-center justify-center rounded-full w-16 h-16 "
-                    )}
+                <Modal
+                    animationType="slide"
+                    transparent={true}
+                    visible={modalVisibleyescall}
+                    onRequestClose={() => {
+
+                        setModalVisibleyescall(!modalVisibleyescall);
+                    }}
                 >
-                    <Image source={messages} />
-                </TouchableOpacity>
+
+                    <View style={styles.centeredView}>
+
+                        <View style={styles.modalView}>
+                            <TouchableOpacity style={[
+                                tw(
+                                    "absolute top-0 right-0 "
+                                )
+
+                            ]}>
+
+                                <AntDesign name="closecircle" size={40} color="black"
+                                    onPress={() => setModalVisibleyescall(!modalVisibleyescall)}
+                                />
+
+                            </TouchableOpacity>
+                            <Text style={styles.modalText}>The number is in the Profile   </Text>
+                            <View style={tw("p-1")} />
+                            <Text style={styles.modalTextupgrade}> You are a Premium Member ☑️ </Text>
+
+                            <Text style={styles.modalTexts}>Note : Please Call only if you now the person and dont spam the number .
+                            </Text>
+                            <Text style={styles.modalTexts}>
+                                Strict Actions will be taken by the constitution goverment if done wrong</Text>
+                            <View style={tw("p-3")}></View>
+
+
+
+                        </View>
+                    </View>
+                </Modal>
+                <View style={tw("p-1")} />
+                {userstatepro ?
+                    <TouchableOpacity
+                        onPress={() => swipeRef.current.swipeRight()}
+                        style={tw(
+                            "items-center justify-center rounded-full w-16 h-16 "
+                        )}
+                    >
+                        <Image source={messages} />
+                    </TouchableOpacity>
+                    :
+
+                    <TouchableOpacity
+                        onPress={() => setModalVisiblenomessage(!modalVisiblenomessage)}
+                        style={tw(
+                            "items-center justify-center rounded-full w-16 h-16 "
+                        )}
+                    >
+                        <Image source={messages} />
+                    </TouchableOpacity>
+
+                }
                 <View style={tw("p-1")} />
                 <TouchableOpacity
                     onPress={() => swipeRef.current.swipeRight()}
@@ -561,7 +842,7 @@ const HomeScreen = () => {
                 <View style={tw("p-1")} />
                 {userstatepro ?
                     <TouchableOpacity
-                        onPress={() => swipeRef.current.swipeRight()}
+                        onPress={() => setModalVisibleyescall(!modalVisibleyescall)}
                         style={tw(
                             "items-center justify-center rounded-full w-16 h-16 "
                         )}
@@ -597,7 +878,6 @@ const HomeScreen = () => {
                     style={tw(" text-xl text-yellow-500 ")}
 
                 >Hide & Report</Text>
-
             </TouchableOpacity>
 
 
@@ -633,6 +913,7 @@ const styles = StyleSheet.create({
         width: 155,
         height: 55,
     },
+
     titlenumber: {
 
         resizeMode: 'cover',
@@ -674,6 +955,32 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 5
     },
+    PremiumView: {
+        margin: 30,
+        backgroundColor: "white",
+
+        borderRadius: 20,
+        padding: 20,
+        height: 655,
+        width: 350,
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5
+    },
+    premiumimg: {
+
+        resizeMode: 'cover',
+        justifyContent: 'center',
+        width: 340,
+        height: 620,
+
+    },
     button: {
         borderRadius: 20,
         padding: 15,
@@ -689,6 +996,13 @@ const styles = StyleSheet.create({
     },
     textStyle: {
         color: "white",
+        fontWeight: "bold",
+        textAlign: "center",
+
+
+    },
+    textStylenum: {
+        color: "black",
         fontWeight: "bold",
         textAlign: "center",
 

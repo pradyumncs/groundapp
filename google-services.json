@@ -1,72 +1,72 @@
 {
   "project_info": {
-    "project_number": "913038664899",
-    "project_id": "sincere-25a86",
-    "storage_bucket": "sincere-25a86.appspot.com"
+    "project_number": "437647564979",
+    "project_id": "welocal-933c1",
+    "storage_bucket": "welocal-933c1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:913038664899:android:bbb533f0d303ed2ec52e76",
+        "mobilesdk_app_id": "1:437647564979:android:688084e52e20364664d0c6",
         "android_client_info": {
-          "package_name": "com.weconnectgroup.sincere"
+          "package_name": "com.weconnectgroup.welocal"
         }
       },
       "oauth_client": [
         {
-          "client_id": "913038664899-1gm595ju2nnfgob8rj9lb79amvcseaa8.apps.googleusercontent.com",
+          "client_id": "437647564979-1fggtf4i812fqeat4kd7sbo737l77dgi.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.weconnectgroup.sincere",
-            "certificate_hash": "84daaafbff932e8731b487119f7ea82a14f006bc"
+            "package_name": "com.weconnectgroup.welocal",
+            "certificate_hash": "e0f946f92ff17f51ec491e94af858f80c991a034"
           }
         },
         {
-          "client_id": "913038664899-41oe1o2uktetefm721vrg0974tikka7q.apps.googleusercontent.com",
+          "client_id": "437647564979-21ng7jct8emv6lubkscraiud3asr80ra.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.weconnectgroup.sincere",
-            "certificate_hash": "4f39ac41183d36ab7c5166ba9c0d25510737f647"
+            "package_name": "com.weconnectgroup.welocal",
+            "certificate_hash": "1b5653a36b5126ac3862d237ca79b6816b607e48"
           }
         },
         {
-          "client_id": "913038664899-9lm40i0llepc7ra89j85vgc7n2sqvl9o.apps.googleusercontent.com",
+          "client_id": "437647564979-55cobkco1v74q3tt3jf05u74q63beq9g.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.weconnectgroup.sincere",
-            "certificate_hash": "d3f362978e5f78463600c99a420174d6815f6231"
+            "package_name": "com.weconnectgroup.welocal",
+            "certificate_hash": "30e5a193b2882c718891ee5644c4e185cd72a5d2"
           }
         },
         {
-          "client_id": "913038664899-g032ob66o9m5a525vedmkacse63rfo2d.apps.googleusercontent.com",
+          "client_id": "437647564979-jo7hd4m9jdhjvkb1n10kso9iclngmbpr.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.weconnectgroup.sincere",
-            "certificate_hash": "beafeec59324f825f8a9aa28a8f90163b9c6c754"
+            "package_name": "com.weconnectgroup.welocal",
+            "certificate_hash": "e6414439926338e63081e4f70aab62978dd0d40d"
           }
         },
         {
-          "client_id": "913038664899-oi6flpcrlkfvuuvc87diej3pvngv6mul.apps.googleusercontent.com",
+          "client_id": "437647564979-9p4bi75kurjfgq2ulf24kfc4827vg7sc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDt-oEspB2xwRs-sFSVYHhmeG2xHgjuLE0"
+          "current_key": "AIzaSyDybsPlFwpbZ4KAOOod_mjiSnY3cIjyWKI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "913038664899-oi6flpcrlkfvuuvc87diej3pvngv6mul.apps.googleusercontent.com",
+              "client_id": "437647564979-9p4bi75kurjfgq2ulf24kfc4827vg7sc.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "913038664899-7i532r5eu6dsvs0073hqqkr9fk2m6kvt.apps.googleusercontent.com",
+              "client_id": "437647564979-hv5e9l41gk3gj2botjskrs6vrfdoipc6.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.weconnectgroup.sincere"
+                "bundle_id": "com.weconnectgroup.welocal"
               }
             }
           ]

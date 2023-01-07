@@ -33,10 +33,7 @@ import {
 import { db } from "../firebase";
 import like from '../assets/like.png';
 import Purchases from 'react-native-purchases';
-const APIKeys = {
-    apple: "goog_QOKCJJKzoThDlOPNGGZdfBxQPic",
-    google: "goog_QOKCJJKzoThDlOPNGGZdfBxQPic",
-};
+
 
 
 const ProfileEdit = () => {
@@ -69,7 +66,7 @@ const ProfileEdit = () => {
     useEffect(() => {
         const magic = async () => {
             Purchases.setDebugLogsEnabled(true);
-            Purchases.configure({ apiKey: APIKeys.google });
+
 
             const CustomerInfo = await Purchases.getCustomerInfo();
             if (typeof CustomerInfo.entitlements.active['pro'] !== "undefined") {
@@ -169,7 +166,7 @@ const ProfileEdit = () => {
     const SuperSwipeT = () => {
         Toast.show({
             type: 'success',
-            text1: 'Get 500 SuperSwipes to get instant approval',
+            text1: 'Get 500 Instant SuperSwipes to get instant approval',
             text2: ' SuperSwipes ✨'
         });
     }
@@ -201,52 +198,12 @@ const ProfileEdit = () => {
                         <Text style={styles.buttonTextname}>
                             {profiles.age}
                         </Text>
-                        <View style={tw("p-4")}></View>
 
 
-                    </View>
-
-
-                    <View style={tw("flex-row")}>
-                        <View style={tw("flex-col")}>
-                            <TouchableOpacity
-
-                                style={[tw(
-                                    " items-center justify-center rounded-full w-16 h-16 bg-white"
-                                ),
-                                styles.shadow,
-                                ]}
-                            >
-                                <MaterialIcons name="settings" size={24} color="black" />
-                            </TouchableOpacity>
-                            <View style={tw("p-1")}></View>
-
-                            <Text style={tw("text-center font-bold ")}>
-                                SETTINGS</Text>
-
-                        </View>
-                        <View style={tw("p-12")}></View>
-                        <View style={tw("flex-col")}>
-                            <TouchableOpacity
-
-                                style={[tw(
-                                    " items-center justify-center rounded-full w-16 h-16 bg-white"
-                                ),
-                                styles.shadow,
-                                ]}
-                            >
-                                <AntDesign name="edit" size={45} color="black" />
-
-                            </TouchableOpacity>
-                            <View style={tw("justify-center p-1")}></View>
-
-                            <Text style={tw("justify-center text-center font-bold ")}>
-                                EDIT PROFILE</Text>
-
-
-                        </View>
 
                     </View>
+
+
 
                     <View style={tw("p-4")}></View>
 
@@ -273,8 +230,9 @@ const ProfileEdit = () => {
                                 >Unlock all of our features to be in complete control of your experience</Text>
                                 <View style={tw("p-2")}></View>
                                 <TouchableOpacity
-                                    style={[tw("rounded-2xl w-62 p-2  bg-white"),
+                                    style={[tw("rounded-2xl w-32 p-2  bg-white"),
                                     styles.shadow]}
+                                    onPress={() => navigation.navigate("Profile")}
 
                                 >
                                     <Text style={tw("text-center text-black text-lg")}>
@@ -390,11 +348,11 @@ const ProfileEdit = () => {
                     <View><Text style={styles.dashcolor}> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
                         - - - - - - - - - - - </Text></View>
                     <View style={tw("flex flex-row ")}>
-                        <Text style={tw("text-center text-black text-lg font-semibold pr-0")}>500 SuperSwipes</Text>
+                        <Text style={tw("text-center text-black text-lg font-semibold pr-0")}>500 Instant Matches</Text>
                         <TouchableOpacity>
                             <Ionicons name="information-circle-outline" size={24} color="#a7a7a7" onPress={SuperSwipeT} />
                         </TouchableOpacity>
-                        <View style={tw("pr-20 pb-8")}></View>
+                        <View style={tw("pr-9 pb-8")}></View>
                         <FontAwesome5 name="check" size={24} color="#FFA500" />
 
 

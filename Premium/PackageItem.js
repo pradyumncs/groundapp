@@ -37,7 +37,7 @@ const PackageItem = ({ purchasePackage, setIsPurchasing }) => {
 
             if (typeof CustomerInfo.entitlements.active[entitlement_id] !== "undefined") {
 
-                navigation.navigate("Home")
+                navigation.navigate("BottomNavigation")
 
             }
 
@@ -61,16 +61,22 @@ const PackageItem = ({ purchasePackage, setIsPurchasing }) => {
     }
 
     const gettypepackage = (type) => {
-        if (type == 'a_1month') return '1  month'
-        if (type == 'b_3month') return '3  months'
-        if (type == 'c_12month') return '12  months'
+        if (type == 'b_1month') return '1'
+        if (type == 'a_3month') return '3'
+        if (type == 'c_6month') return '6'
+
+    }
+    const gettypepackagemonth = (type) => {
+        if (type == 'b_1month') return 'month'
+        if (type == 'a_3month') return 'months'
+        if (type == 'c_6month') return 'months'
 
     }
 
     const popular = (type) => {
-        if (type == 'a_1month') return 'MOST POPULAR'
-        if (type == 'b_3month') return 'SAVE 29%'
-        if (type == 'c_12month') return 'SAVE 53%'
+        if (type == 'b_1month') return 'MOST POPULAR'
+        if (type == 'a_3month') return '🔥 SAVE 29%'
+        if (type == 'c_6month') return '🔥 SAVE 53%'
     }
 
     return (
@@ -88,7 +94,7 @@ const PackageItem = ({ purchasePackage, setIsPurchasing }) => {
             >
                 <View
 
-                    style={styles.posterImage}
+                    style={[styles.posterImage, styles.shadow]}
                 >
                     <View
                         style={[tw("rounded-xl bg-black"),
@@ -96,15 +102,27 @@ const PackageItem = ({ purchasePackage, setIsPurchasing }) => {
 
                     >
 
-                        <Text style={tw("text-center text-white ")}>
+                        <Text style={tw("text-center text-black ")}>
                             {popular(identifier)}
                         </Text>
                     </View>
-
-                    <View style={tw("items-center pt-32")}>
+                    <View style={tw("items-center pt-8")}>
 
                         <Text style={styles.date}>{gettypepackage(identifier)}</Text>
-                        <View style={tw("p-3")}></View>
+
+
+                    </View>
+                    <View style={tw("items-center")}>
+
+                        <Text style={styles.month}>{gettypepackagemonth(identifier)}</Text>
+
+
+                    </View>
+
+                    <View style={tw("items-center pt-16")}>
+
+
+
                         <Text style={styles.price}>{priceString}</Text>
                     </View>
 
@@ -115,12 +133,12 @@ const PackageItem = ({ purchasePackage, setIsPurchasing }) => {
 
 
                 <View
-                    style={[tw("rounded-2xl w-62 p-2  bg-white"),
+                    style={[tw("rounded-2xl p-3 "),
                     styles.shadow]}
 
                 >
-                    <Text style={tw("text-center text-black text-lg")}>
-                        Get Premium
+                    <Text style={tw("text-center font-semibold text-black text-lg")}>
+                        Continue
                     </Text>
                 </View>
             </View>
@@ -143,8 +161,13 @@ const styles = StyleSheet.create({
     },
     date: {
         color: 'black',
-        fontSize: 25,
+        fontSize: 30,
         fontWeight: 'bold',
+    },
+    month: {
+        color: 'black',
+        fontSize: 16,
+        fontWeight: '470',
     },
     price: {
         color: 'black',
@@ -166,13 +189,13 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     posterImage: {
-        width: 200,
-        height: 350,
+        width: 110,
+        height: 250,
         resizeMode: 'cover',
         borderRadius: 24,
         margin: 0,
         marginBottom: 10,
-        backgroundColor: '#FFC629',
+        backgroundColor: '#fff8de',
     },
     shadow: {
         shadowColor: "#000000",
@@ -181,9 +204,10 @@ const styles = StyleSheet.create({
             height: 3,
         },
         shadowOpacity: 0.27,
-        shadowRadius: 8.65,
+        shadowRadius: 4.65,
 
-        elevation: 8,
+        elevation: 4,
+        backgroundColor: '#fff8de',
     },
 })
 

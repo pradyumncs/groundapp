@@ -17,7 +17,7 @@ const Onboardingitem = ({ item }) => {
             </View>
 
             <View style={tw("items-center ")}>
-                <Text style={tw("text-center text-lg font-semibold")}>
+                <Text style={tw("text-center text-2xl font-semibold text-black")}>
                     {item.title}
                 </Text>
 

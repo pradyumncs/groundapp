@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, FlatList, Alert, Image, useWindowDimensions, Animated } from 'react-native'
+import { View, Text, StyleSheet, FlatList, Alert, Image, useWindowDimensions, Animated, ImageBackground, TouchableOpacity } from 'react-native'
 import React, { useState, useRef, useEffect } from 'react'
 import data from '../data'
 import Onboardingitem from '../Onboardingitem'
@@ -9,14 +9,12 @@ import Purchases, { PurchasesOffering } from 'react-native-purchases';
 import PackageItem from '../Premium/PackageItem'
 import { ScrollView } from 'react-native'
 import { Pressable } from 'react-native'
-const APIKeys = {
-    apple: "goog_QOKCJJKzoThDlOPNGGZdfBxQPic",
-    google: "goog_QOKCJJKzoThDlOPNGGZdfBxQPic",
-};
+import { useNavigation } from '@react-navigation/native';
+import { Entypo } from '@expo/vector-icons';
 const entitlement_id = 'pro';
 const Premium = () => {
 
-
+    const navigation = useNavigation();
     const slideRef = useRef(null);
     const scrollX = useRef(new Animated.Value(0)).current;
     const [currentIndex, setCurrentindex] = useState(0)
@@ -80,10 +78,23 @@ const Premium = () => {
 
 
     return (
-        <ScrollView>
+
+
+        <ImageBackground
+            resizeMode="cover"
+            style={tw("flex-1")}
+            source={require("../assets/try2.png")}
+        >
+            <View style={tw("p-1")} />
             <View style={styles.container}>
+                <TouchableOpacity onPress={() => navigation.goBack()}
+                    style={tw("absolute left-0 top-0 h-16 w-16 pt-2 pl-3")}>
+
+                    <Entypo name="cross" size={32} color="black" />
+
+                </TouchableOpacity>
                 <View style={tw("items-center pt-2")}>
-                    <Text style={tw("text-center text-lg font-semibold")}>
+                    <Text style={tw("text-center text-2xl font-semibold text-black")}>
                         Get Premium
                     </Text>
 
@@ -91,6 +102,7 @@ const Premium = () => {
                 <View style={tw("p-2")} />
                 <View style={tw("p-2")} />
                 <FlatList data={data} renderItem={({ item }) => <Onboardingitem item={item} />}
+
                     horizontal
                     showsHorizontalScrollIndicator={false}
                     pagingEnabled
@@ -115,12 +127,12 @@ const Premium = () => {
                 <View style={tw(" items-center justify-center")}>
                     <Paginator data={data} scrollX={scrollX} />
                 </View>
-                <View>
-                    <Text>.</Text>
-                </View>
+
 
             </View>
-        </ScrollView>
+            <View style={tw("p-2")} />
+        </ImageBackground>
+
     )
 }
 

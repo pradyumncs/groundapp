@@ -41,9 +41,9 @@ export default Paginator
 
 const styles = StyleSheet.create({
     dot: {
-        height: 10,
-        borderRadius: 5,
-        backgroundColor: '#493d8a',
+        height: 8,
+        borderRadius: 99,
+        backgroundColor: '#FFD700',
         marginHorizontal: 2,
     },
 

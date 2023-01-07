@@ -8,15 +8,14 @@ import { getStorage } from "firebase/storage";
 import "firebase/compat/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAoIKBB850XMtdGuGVPGZe0TfIVhElYjko",
-    authDomain: "sincere-25a86.firebaseapp.com",
-    projectId: "sincere-25a86",
-    storageBucket: "sincere-25a86.appspot.com",
-    messagingSenderId: "913038664899",
-    appId: "1:913038664899:web:531e7caafc596c3dc52e76",
-    measurementId: "G-Z36DCXQKVS"
+    apiKey: "AIzaSyAqvbRwHO9HVjVZovUKNe8C7-bHCbul4Xk",
+    authDomain: "welocal-933c1.firebaseapp.com",
+    projectId: "welocal-933c1",
+    storageBucket: "welocal-933c1.appspot.com",
+    messagingSenderId: "437647564979",
+    appId: "1:437647564979:web:3f329fdd1c94b43764d0c6",
+    measurementId: "G-Z76BEJ27HM"
 };
-
 
 
 // Initialize Firebase

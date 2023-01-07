@@ -41,7 +41,6 @@ const StackNavigator = () => {
         <Stack.Navigator screenOptions={{ headerShown: false }}>
             {user ? (
                 <>
-
                     <Stack.Group>
                         <Stack.Screen name="BottomNavigation" component={BottomNavigation} />
                         <Stack.Screen name="First" component={FirstScreen} />
@@ -51,6 +50,20 @@ const StackNavigator = () => {
                         <Stack.Screen name="Message" component={MessageScreen} />
 
                     </Stack.Group>
+                    <Stack.Group>
+                        <Stack.Screen name="Upload" component={Upload} />
+                        <Stack.Screen name="Test" component={Test} />
+                        <Stack.Screen name="Learn" component={Learn} />
+                        <Stack.Screen name="Premium" component={Premium} />
+                        <Stack.Screen name="Premiumoffer" component={Premiumoffer} />
+                    </Stack.Group>
+
+
+
+
+
+
+
 
                     <Stack.Group>
                         <Stack.Screen name="Name" component={Names} />
@@ -64,13 +77,6 @@ const StackNavigator = () => {
                     </Stack.Group>
 
 
-                    <Stack.Group>
-                        <Stack.Screen name="Upload" component={Upload} />
-                        <Stack.Screen name="Test" component={Test} />
-                        <Stack.Screen name="Learn" component={Learn} />
-                        <Stack.Screen name="Premium" component={Premium} />
-                        <Stack.Screen name="Premiumoffer" component={Premiumoffer} />
-                    </Stack.Group>
 
 
 

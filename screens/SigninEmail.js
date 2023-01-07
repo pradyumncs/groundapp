@@ -46,14 +46,14 @@ const SignInEmail = () => {
 
 
                 <View style={tw("p-4")} />
-                <View style={tw("divBox flex items-center justify-center")}>
-                    <Image style={tw("divBox flex items-center justify-center h-32 w-32")} source={logo} />
+                <View style={tw("flex items-center justify-center")}>
+                    <Image style={tw("flex items-center justify-center h-32 w-32")} source={logo} />
                     <View style={tw("p-2")} />
                     <Text style={styles.buttonTextsm}>Login</Text>
                 </View>
 
                 <TouchableOpacity
-                    style={tw("divBox flex items-center justify-center h-1/2 w-full")}
+                    style={tw(" flex items-center justify-center h-1/2 w-full")}
                 >
 
                     <TextInput
@@ -87,7 +87,7 @@ const SignInEmail = () => {
 
                 </TouchableOpacity>
                 <View style={tw(" items-center ")}>
-                    <Image style={tw("divBox flex items-center justify-center h-20 w-16")}
+                    <Image style={tw("flex items-center justify-center h-20 w-16")}
                         source={pbar} />
                 </View>
 
@@ -98,13 +98,13 @@ const SignInEmail = () => {
                         Learn how we process your data in our {' '}
                         <Text
                             style={styles.hyperli}
-                            onPress={() => { Linking.openURL('https://pages.flycricket.io/sincere/privacy') }}>
+                            onPress={() => { Linking.openURL('https://doc-hosting.flycricket.io/wealthy-privacy-policy/40c2379a-e568-46a5-8d36-6cda8e9c56e0/privacy') }}>
                             Privacy policy
                         </Text>
                         {"\n"} and {' '}
                         <Text
                             style={styles.hyperli}
-                            onPress={() => { Linking.openURL('https://pages.flycricket.io/sincere/terms') }}>
+                            onPress={() => { Linking.openURL('https://doc-hosting.flycricket.io/wealthy-terms-of-use/a213a6e7-dcc0-427f-b2ac-72124dbb1598/terms') }}>
                             Terms of Service.
                         </Text>
 

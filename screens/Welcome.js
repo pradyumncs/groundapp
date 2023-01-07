@@ -35,6 +35,7 @@ import like from '../assets/like.png';
 
 
 const Welcome = ({ navigation }) => {
+    const androidPackageName = 'com.weconnectgroup.welocal';
     const { user, signOut } = useAuth();
     const tw = useTailwind();
 
@@ -67,7 +68,7 @@ const Welcome = ({ navigation }) => {
     );
 
     return (
-        <View>
+        <View style={tw("items-center ")}>
             <Image style={styles.image} source={require("../appassets/couple.jpg")} />
             <View style={tw("p-2")}>
 
